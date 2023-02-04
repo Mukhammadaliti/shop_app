@@ -96,6 +96,7 @@ class _RegisterPageState extends State<RegisterPage> {
             decoration: InputDecoration(
                 hintText: 'Full Name',
                 border: OutlineInputBorder(
+                  borderSide: BorderSide(),
                   borderRadius: BorderRadius.circular(20),
                 )),
           )
