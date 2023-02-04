@@ -26,7 +26,9 @@ class _RegisterPageState extends State<RegisterPage> {
               Icon(Icons.maps_home_work)
             ],
           ),
-          SizedBox(height: 50,),
+          SizedBox(
+            height: 50,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -67,7 +69,13 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
             ],
           ),
-          TextFormField(decoration: InputDecoration(hintText: 'Full Name', border: OutlineInputBorder(borderRadius: BorderRadius.circular(20),)),)
+          TextFormField(
+            decoration: InputDecoration(
+                hintText: 'Full Name',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                )),
+          )
         ],
       ),
     );
