@@ -75,6 +75,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                 )),
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+                hintText: 'Full Name',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                )),
           )
         ],
       ),
