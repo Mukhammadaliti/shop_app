@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_app/app/presentation/pages/welcom_page/welcom_page_wigets/log_sign_widget.dart';
 import 'package:shop_app/app/presentation/pages/welcom_page/welcom_page_wigets/quick_registration_widget.dart';
+import 'package:shop_app/app/utils/constans/color/constans_colors.dart';
 
 import '../widget/animation_widget/colorize_animation_widget.dart';
 
@@ -20,7 +21,7 @@ class _WelcomePageState extends State<WelcomePage> {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage('assets/images/inapp/bgimage.jpg'),
+            image: AssetImage('assets/images/inapp/bgimage2.jpg'),
           ),
         ),
         constraints: BoxConstraints.expand(),
@@ -38,11 +39,13 @@ class _WelcomePageState extends State<WelcomePage> {
               DefaultTextStyle(
                 style: TextStyle(
                   fontSize: 60,
-                  color: Colors.lightBlueAccent,
+                  color: ConstansColor.black,
                   fontFamily: 'Acme',
                   fontWeight: FontWeight.bold,
                 ),
-                child: AnimatedTextKit(animatedTexts: [
+                child: AnimatedTextKit(
+                  
+                  animatedTexts: [
                   RotateAnimatedText('Buy'),
                   RotateAnimatedText('Shop'),
                   RotateAnimatedText('Duck Store'),
@@ -151,17 +154,17 @@ class _WelcomePageState extends State<WelcomePage> {
                     QuickRegistrationWidget(
                       title: 'Google',
                       pressed: () {},
-                      regImage: Image.asset('image/inapp/google.jpg'),
+                       image:Image.asset('images/inapp/google.jpg', width: 50,) ,
                     ),
                     QuickRegistrationWidget(
                       title: 'Facebook',
                       pressed: () {},
-                      regImage: Image.asset('image/inapp/facebook.jpg'),
+                      image:Image.asset('images/inapp/facebook.jpg', width: 50,) ,
                     ),
                     QuickRegistrationWidget(
                       title: 'Guest',
                       pressed: () {},
-                      regImage: Image.asset('image/inapp/person.png'),
+                      image:Image.asset('images/inapp/person.png', width: 50,) ,
                     ),
                   ],
                 ),

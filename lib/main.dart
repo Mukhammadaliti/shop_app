@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/app/presentation/pages/main_page/home_page.dart';
+import 'package:shop_app/app/presentation/pages/register_page/register_page.dart';
 import 'package:shop_app/app/presentation/pages/welcom_page/welcom_page.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WelcomePage(),
+      home: RegisterPage(),
     );
   }
 }

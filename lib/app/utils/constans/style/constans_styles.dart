@@ -59,4 +59,9 @@ class ConstansStyle {
     fontSize: 15,
     fontWeight: FontWeight.w600,
   );
+  static const TextStyle black25bold = TextStyle(
+  color: ConstansColor.black,
+  fontSize: 25,
+  fontWeight: FontWeight.bold,
+);
 }

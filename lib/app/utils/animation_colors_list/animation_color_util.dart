@@ -4,12 +4,14 @@ import 'package:shop_app/app/utils/constans/color/constans_colors.dart';
 
 class AnimationColorListUtil {
   static const List<Color> ConstanttextColor = [
-    ConstansColor.blue,
+    ConstansColor.black,
+    ConstansColor.purple,
     ConstansColor.red,
     ConstansColor.yellow,
-    ConstansColor.black,
+    ConstansColor.pink,
     ConstansColor.blue,
     ConstansColor.green,
-    ConstansColor.teal,
+    ConstansColor.brown,
+    ConstansColor.white,
   ];
 }
