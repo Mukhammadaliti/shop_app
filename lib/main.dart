@@ -19,7 +19,12 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: RegisterPage(),
+      home: WelcomePage(),
+      // initialRoute: '/',
+      // routes: {
+      //   '/singUp_page' :(context) => RegisterPage(),
+      //   '/welcom_page' :(context) => WelcomePage(),
+      // },
     );
   }
 }
