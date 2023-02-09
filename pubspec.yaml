@@ -39,6 +39,10 @@ dependencies:
 
 dev_dependencies:
   animated_text_kit: ^4.2.2
+  cloud_firestore: ^4.3.2
+  # firebase_analytics: ^10.1.1
+  firebase_auth: ^4.2.6
+  firebase_core: ^2.5.0
   flutter_test:
     sdk: flutter
 
