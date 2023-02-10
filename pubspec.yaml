@@ -45,6 +45,7 @@ dev_dependencies:
   firebase_core: ^2.5.0
   flutter_test:
     sdk: flutter
+  image_picker: ^0.8.6+1
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -66,6 +67,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/fonts/
     - assets/images/accessories/
     - assets/images/bags/
     - assets/images/beauty/
@@ -99,10 +101,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-    # - family: Schyler
-      # fonts:
-        # - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

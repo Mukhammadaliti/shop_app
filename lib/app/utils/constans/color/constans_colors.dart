@@ -21,6 +21,8 @@ class ConstansColor {
   static const Color lime = Colors.lime;
   static const Color pink = Colors.pink;
   static const Color purple = Colors.purple;
+  static const Color purpleAccent = Colors.purpleAccent;
   static const Color teal = Colors.teal;
   static const Color red = Colors.red;
+  static const Color blueGrey =  Colors.blueGrey;
 }

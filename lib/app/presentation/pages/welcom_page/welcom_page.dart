@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:shop_app/app/presentation/pages/register_page/register_page.dart';
 import 'package:shop_app/app/presentation/pages/welcom_page/welcom_page_wigets/log_sign_widget.dart';
 import 'package:shop_app/app/presentation/pages/welcom_page/welcom_page_wigets/quick_registration_widget.dart';
 import 'package:shop_app/app/utils/constans/color/constans_colors.dart';
@@ -21,7 +22,7 @@ class _WelcomePageState extends State<WelcomePage> {
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage('assets/images/inapp/bgimage2.jpg'),
+            image: AssetImage('assets/images/inapp/bg.jpg'),
           ),
         ),
         constraints: BoxConstraints.expand(),
@@ -30,26 +31,10 @@ class _WelcomePageState extends State<WelcomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ColorizeAnimationWidget(),
-              SizedBox(
-                height: 120,
-                child: Image(
-                  image: AssetImage('assets/images/inapp/logo.jpg'),
-                ),
-              ),
-              DefaultTextStyle(
-                style: TextStyle(
-                  fontSize: 60,
-                  color: ConstansColor.black,
-                  fontFamily: 'Acme',
-                  fontWeight: FontWeight.bold,
-                ),
-                child: AnimatedTextKit(
-                  
-                  animatedTexts: [
-                  RotateAnimatedText('Buy'),
-                  RotateAnimatedText('Shop'),
-                  RotateAnimatedText('Duck Store'),
-                ]),
+              Image(
+                height: 190,
+                width: 190,
+                image: AssetImage('assets/images/inapp/logotip.png'),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -79,31 +64,6 @@ class _WelcomePageState extends State<WelcomePage> {
                       SizedBox(
                         height: 6,
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(30),
-                            bottomLeft: Radius.circular(30),
-                          ),
-                          color: Colors.grey.withOpacity(0.7),
-                        ),
-                        child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                SizedBox(
-                                  height: 45,
-                                  child: Image(
-                                    image: AssetImage(
-                                        'assets/images/inapp/logo.jpg'),
-                                  ),
-                                ),
-                                LogSignWidget(write: 'Log In', tap: () {}),
-                                LogSignWidget(tap: () {}, write: 'Sing In'),
-                              ],
-                            )),
-                      ),
                     ],
                   ),
                 ],
@@ -128,18 +88,17 @@ class _WelcomePageState extends State<WelcomePage> {
                           LogSignWidget(
                             write: 'Log In',
                             tap: () {},
-                            // title: 'Log In',
-                            // onTap: () {},
                           ),
                           LogSignWidget(
-                            tap: () {},
+                            tap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+                            },
                             write: 'Sing In',
                           ),
-                          SizedBox(
-                            height: 45,
-                            child: Image(
-                              image: AssetImage('assets/images/inapp/logo.jpg'),
-                            ),
+                          Image(
+                            height: 80,
+                            image:
+                                AssetImage('assets/images/inapp/logotip.png'),
                           ),
                         ],
                       )),
@@ -154,17 +113,26 @@ class _WelcomePageState extends State<WelcomePage> {
                     QuickRegistrationWidget(
                       title: 'Google',
                       pressed: () {},
-                       image:Image.asset('images/inapp/google.jpg', width: 50,) ,
+                      image: Image.asset(
+                        'assets/images/inapp/google.jpg',
+                        width: 50,
+                      ),
                     ),
                     QuickRegistrationWidget(
                       title: 'Facebook',
                       pressed: () {},
-                      image:Image.asset('images/inapp/facebook.jpg', width: 50,) ,
+                      image: Image.asset(
+                        'assets/images/inapp/facebook.jpg',
+                        width: 50,
+                      ),
                     ),
                     QuickRegistrationWidget(
                       title: 'Guest',
                       pressed: () {},
-                      image:Image.asset('images/inapp/person.png', width: 50,) ,
+                      image: Image.asset(
+                        'assets/images/inapp/person.png',
+                        width: 50,
+                      ),
                     ),
                   ],
                 ),
