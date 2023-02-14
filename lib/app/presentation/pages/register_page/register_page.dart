@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shop_app/app/presentation/pages/main_page/home_page.dart';
 import 'package:shop_app/app/presentation/pages/register_page/register_widget/camera_choice_widget.dart';
+import 'package:shop_app/app/presentation/pages/register_page/register_widget/sing_in_button_widget.dart';
 import 'package:shop_app/app/utils/constans/color/constans_colors.dart';
 import 'package:shop_app/app/utils/constans/style/constans_styles.dart';
 
@@ -71,13 +72,13 @@ class _RegisterPageState extends State<RegisterPage> {
   void snackBar(String text) {
     _scaffolfKey.currentState!.showSnackBar(
       SnackBar(
-        duration: Duration(seconds: 4),
-        backgroundColor: ConstansColor.purple,
+          duration: Duration(seconds: 4),
+          backgroundColor: ConstansColor.purple,
           content: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: ConstansStyle.black25,
-      )),
+            text,
+            textAlign: TextAlign.center,
+            style: ConstansStyle.black25,
+          )),
     );
   }
 
@@ -323,8 +324,8 @@ class _RegisterPageState extends State<RegisterPage> {
                           style: ConstansStyle.black18),
                       GestureDetector(
                         onTap: () {},
-                        child:
-                            Text('Log In    ', style: ConstansStyle.purple20blod),
+                        child: Text('Log In    ',
+                            style: ConstansStyle.purple20blod),
                       ),
                     ],
                   ),
@@ -341,25 +342,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           onTap: () {
                             singUp();
                           },
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: ConstansColor.purple,
-                                borderRadius: BorderRadius.circular(30)),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 150,
-                                vertical: 15,
-                              ),
-                              child: Text(
-                                'Sign Up',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
+                          child: SingInButtonWidget(),
                         ),
                 ],
               ),

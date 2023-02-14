@@ -36,51 +36,44 @@ class _WelcomePageState extends State<WelcomePage> {
                 width: 190,
                 image: AssetImage('assets/images/inapp/logotip.png'),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(30),
-                            bottomLeft: Radius.circular(30),
-                          ),
-                          color: Colors.grey.withOpacity(0.7),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                            'Suppliers only',
-                            style: TextStyle(
-                                color: Colors.yellow,
-                                fontSize: 30,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ),
+              Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        bottomLeft: Radius.circular(30),
                       ),
-                      SizedBox(
-                        height: 6,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  right: 70,
-                ),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(30),
-                      bottomRight: Radius.circular(30),
+                      color: Colors.grey.withOpacity(0.7),
                     ),
-                    color: Colors.grey.withOpacity(0.7),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Text(
+                        'Suppliers only',
+                        style: TextStyle(
+                            color: Colors.yellow,
+                            fontSize: 30,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
                   ),
-                  child: Padding(
+                  SizedBox(
+                    height: 6,
+                  ),
+                ]),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    right: 90,
+                  ),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(30),
+                        bottomRight: Radius.circular(30),
+                      ),
+                      color: Colors.grey.withOpacity(0.7),
+                    ),
+                    child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -91,7 +84,10 @@ class _WelcomePageState extends State<WelcomePage> {
                           ),
                           LogSignWidget(
                             tap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => RegisterPage()));
                             },
                             write: 'Sing In',
                           ),
@@ -101,9 +97,11 @@ class _WelcomePageState extends State<WelcomePage> {
                                 AssetImage('assets/images/inapp/logotip.png'),
                           ),
                         ],
-                      )),
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+              ]),
               Container(
                 color: Colors.grey.withOpacity(0.7),
                 child: Row(

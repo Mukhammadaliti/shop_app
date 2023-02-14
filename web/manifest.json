@@ -1,10 +1,10 @@
 {
-    "name": "shop_app",
+    "name": "Gepard Shop",
     "short_name": "shop_app",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
+    "background_color": "#C8A103",
+    "theme_color": "#DAE90C",
     "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
