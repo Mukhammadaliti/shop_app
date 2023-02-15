@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         appBar: AppBar(
-          title: SearchWidget(), // Row
+          title: SearchWidget(),
           elevation: 0,
           backgroundColor: ConstansColor.transparent,
           bottom: TabBar(

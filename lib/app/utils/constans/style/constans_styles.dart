@@ -8,15 +8,25 @@ class ConstansStyle {
     fontFamily: 'Roboto',
     color: ConstansColor.white,
   );
+  static const TextStyle animationText = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Roboto',
+  );
   static const TextStyle black18 = TextStyle(
     fontSize: 18,
     fontFamily: 'Roboto',
-    color: ConstansColor.black26,
+    color: ConstansColor.black,
   );
-  static const TextStyle black12S18 = TextStyle(
+  static const TextStyle black15 = TextStyle(
+    fontSize: 10,
+    fontFamily: 'Roboto',
+    color: ConstansColor.black,
+  );
+  static const TextStyle black26S18 = TextStyle(
     fontSize: 18,
     fontFamily: 'Roboto',
-    color: ConstansColor.black12,
+    color: ConstansColor.black26,
   );
   static const TextStyle black87S18 = TextStyle(
     fontFamily: 'Roboto',

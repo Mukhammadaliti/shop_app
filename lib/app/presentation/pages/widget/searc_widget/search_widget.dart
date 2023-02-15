@@ -5,61 +5,56 @@ import 'package:flutter/material.dart';
 import '../../../../utils/constans/color/constans_colors.dart';
 import '../../../../utils/constans/style/constans_styles.dart';
 
-class SearchWidget extends StatelessWidget {
-  const SearchWidget({
-    super.key,
-  });
+class SearchWidget extends StatefulWidget {
+  SearchWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  _SearchWidgetState createState() => _SearchWidgetState();
+}
+
+class _SearchWidgetState extends State<SearchWidget> {
+  late TextEditingController _textEditingController;
+  @override
+  void initState() {
+    _textEditingController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _textEditingController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(8.0),
-      child: InkWell(
-        onTap: () {
-          print("Log =====>");
-        },
-        child: Container(
-          height: 35,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: ConstansColor.yellow),
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 8, 0, 0),
+      width: double.infinity,
+      height: 90,
+      child: TextField(
+        controller: _textEditingController,
+        keyboardType: TextInputType.text,
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.symmetric(),
+          fillColor: ConstansColor.orange,
+          filled: true,
+          prefixIcon: Icon(
+            Icons.search_rounded,
+            color: ConstansColor.orange2,
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  SizedBox(
-                    width: 7,
-                  ),
-                  Icon(
-                    Icons.search_outlined,
-                    color: ConstansColor.grey,
-                    size: 23,
-                  ),
-                  SizedBox(
-                    width: 18,
-                  ),
-                  Text(
-                    'Search Product . . .',
-                    style: ConstansStyle.grey25,
-                  ),
-                ],
-              ),
-              Container(
-                child: Text(
-                  'Search'.toUpperCase(),
-                  style: ConstansStyle.grey20,
-                  textAlign: TextAlign.center,
-                ),
-                width: 150,
-                height: 90,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: ConstansColor.yellow),
-              )
-            ],
+          hintText: "Поиск",
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+                color: ConstansColor.blueGrotto.withOpacity(0.7), width: 1),
+            borderRadius: BorderRadius.circular(7),
           ),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(7),
+              borderSide:
+                  BorderSide(width: 3, color: ConstansColor.blueGrotto)),
         ),
       ),
     );

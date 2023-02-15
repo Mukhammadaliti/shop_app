@@ -14,7 +14,7 @@ class WelcomPageDeliveryman extends StatelessWidget {
             "images/inapp/2.jpg",
             height: double.infinity,
             fit: BoxFit.cover,
-          )
+          ),
         ]),
       ),
     );

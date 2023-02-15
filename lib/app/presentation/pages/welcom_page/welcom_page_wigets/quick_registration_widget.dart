@@ -21,7 +21,7 @@ class QuickRegistrationWidget extends StatelessWidget {
           image,
           Text(
             title,
-            style: ConstansStyle.white18,
+            style: ConstansStyle.black18,
           )
         ],
       ),

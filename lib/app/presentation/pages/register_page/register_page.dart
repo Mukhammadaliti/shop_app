@@ -11,6 +11,8 @@ import 'package:shop_app/app/presentation/pages/register_page/register_widget/si
 import 'package:shop_app/app/utils/constans/color/constans_colors.dart';
 import 'package:shop_app/app/utils/constans/style/constans_styles.dart';
 
+import '../welcom_page/welcom_page_wigets/quick_registration_widget.dart';
+
 TextEditingController _nameController = TextEditingController();
 
 class RegisterPage extends StatefulWidget {
@@ -148,7 +150,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         style: ConstansStyle.black25bold,
                       ),
                       // SizedBox(),
-                      Icon(Icons.maps_home_work)
+                      // Icon(Icons.maps_home_work)
                     ],
                   ),
                   SizedBox(
@@ -176,8 +178,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                       topLeft: Radius.circular(16),
                                       topRight: Radius.circular(16)),
                                   icon: Icons.camera_alt,
-                                  onpress: () {
-                                    log('message');
+                                  onpressd: () {
+                                    log('<===message');
                                     _pickedImageCamera();
                                   },
                                 ),
@@ -189,8 +191,9 @@ class _RegisterPageState extends State<RegisterPage> {
                                       bottomLeft: Radius.circular(16),
                                       bottomRight: Radius.circular(16)),
                                   icon: Icons.photo,
-                                  onpress: () {
-                                    _pickedImageCamera();
+                                  onpressd: () {
+                                    log('message ===> ');
+                                    _pickedImageFromGalery();
                                   },
                                 )
                               ],
@@ -321,7 +324,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text('already have account?  ',
-                          style: ConstansStyle.black18),
+                          style: ConstansStyle.black26S18),
                       GestureDetector(
                         onTap: () {},
                         child: Text('Log In    ',
@@ -340,10 +343,63 @@ class _RegisterPageState extends State<RegisterPage> {
                         )
                       : GestureDetector(
                           onTap: () {
+                            if (_formKey.currentState!.validate()) {
+                              log("Valied");
+                            } else {
+                              log('No Valied');
+                            }
                             singUp();
                           },
                           child: SingInButtonWidget(),
                         ),
+                  SizedBox(
+                    height: 90,
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        child: Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            SizedBox(
+                              width: 35,
+                            ),
+                            // GoogleFacebookGuestWidget(title: 'Google', icon: Icons.google, onTap: (){}),
+                            QuickRegistrationWidget(
+                              title: 'Google',
+                              pressed: () {},
+                              image: Image.asset(
+                                'assets/images/inapp/google.jpg',
+                                width: 35,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 50,
+                            ),
+                            QuickRegistrationWidget(
+                              title: 'Facebook',
+                              pressed: () {},
+                              image: Image.asset(
+                                'assets/images/inapp/facebook.jpg',
+                                width: 35,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 50,
+                            ),
+                            QuickRegistrationWidget(
+                              title: 'Guest',
+                              pressed: () {},
+                              image: Image.asset(
+                                'assets/images/inapp/person.png',
+                                width: 35,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -356,7 +412,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
 extension EmailValidator on String {
   bool isValideEmail() {
-    return RegExp(r'^([a-zA-Z0-9]+)([@])([a-zA-Z0-9]+)([\-\_\.])([a-z]{2,3})$')
+    return RegExp(
+            r'^([a-zA-Z0-9]+)([\-\_\.]*)([a-zA-Z0-9]*)([@])([a-zA-Z0-9]{2,})([\. ])([a-zA-Z]{2,3})$')
         .hasMatch(this);
   }
 }

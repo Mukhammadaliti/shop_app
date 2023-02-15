@@ -1,8 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:shop_app/app/utils/constans/style/constans_styles.dart';
 
 import '../../../../utils/animation_colors_list/animation_color_util.dart';
-
 
 class ColorizeAnimationWidget extends StatelessWidget {
   ColorizeAnimationWidget({
@@ -15,21 +15,8 @@ class ColorizeAnimationWidget extends StatelessWidget {
       repeatForever: true,
       animatedTexts: [
         ColorizeAnimatedText(
-          'Welcome',
-          textStyle: TextStyle(
-            fontSize: 45,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Acme',
-          ),
-          colors: AnimationColorListUtil.ConstanttextColor,
-        ),
-        ColorizeAnimatedText(
-          'Duck Store',
-          textStyle: TextStyle(
-            fontSize: 45,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Acme',
-          ),
+          'Welcome To Duck Store',
+          textStyle: ConstansStyle.animationText,
           colors: AnimationColorListUtil.ConstanttextColor,
         ),
       ],

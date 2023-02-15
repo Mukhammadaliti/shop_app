@@ -6,15 +6,15 @@ class CameraChoiceWidget extends StatelessWidget {
       {Key? key,
       required this.radiusOnly,
       required this.icon,
-      required this.onpress})
+      required this.onpressd})
       : super(key: key);
   final BorderRadiusGeometry radiusOnly;
   final IconData icon;
-  final Function() onpress;
+  final Function() onpressd;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onpressd,
       child: Container(
         decoration: BoxDecoration(
             borderRadius: radiusOnly, color: ConstansColor.purpleAccent),
