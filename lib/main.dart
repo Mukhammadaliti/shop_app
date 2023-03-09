@@ -1,38 +1,45 @@
-import 'package:flutter/material.dart';
-import 'package:shop_app/app/presentation/pages/main_page/home_page.dart';
-import 'package:shop_app/app/presentation/pages/register_page/register_page.dart';
-import 'package:shop_app/app/presentation/pages/welcom_page/welcom_page.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'app/presentation/pages/welcom_page/welcom_page_deliveryman/welcom_page_deliveryman.dart';
+import 'package:flutter/material.dart';
+import 'package:shop_app/app/customers/auth/customer_login_page.dart';
+import 'package:shop_app/app/customers/auth/customer_sign_up_page.dart';
+import 'package:shop_app/app/customers/main_pages/customer/customer_page.dart';
+import 'package:shop_app/app/home_page.dart';
+import 'package:shop_app/app/suppliers/auth/suppliers_login.dart';
+import 'package:shop_app/app/suppliers/auth/suppliers_signup.dart';
+import 'package:shop_app/app/suppliers/main_pages/category/category_page.dart';
+import 'package:shop_app/app/suppliers/main_pages/upload/upload_page.dart';
 
-// import 'app/presentation/pages/welcom_page/welcom_page_deliveryman/welcom_page_deliveryman.dart';
+import 'app/suppliers/suppliers_page.dart';
+import 'app/welcome_page/welcome_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const ShopApp());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class ShopApp extends StatelessWidget {
+  const ShopApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: WelcomPageDeliveryman(),
-      initialRoute: '/',
+      // home: UploadPage(),
+      // home: SuppliersPage(),
+      // home: UploadPage(),
+      // home: HomePage(),
+      initialRoute: '/welcome_page',
       routes: {
-        '/': (context) => WelcomePage(),
-        '/singup_page': (context) => RegisterPage(),
+        '/welcome_page': (context) => WelcomePage(),
         '/home_page': (context) => HomePage(),
+        '/customer_signup_page': (context) => CustomerSignUpPage(),
+        '/customer_page': (context) => CustomerPage(),
+        '/customer_login_page': (context) => CustomerLogInPage(),
+        '/suppliers_page': (context) => SuppliersPage(),
+        '/suppliers_signup': (context) => SuppliersSignUp(),
+        '/suppliers_login': (context) => SuppliersLogIn(),
       },
-      // home: WelcomePage(),
     );
   }
 }

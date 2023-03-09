@@ -43,15 +43,13 @@ dev_dependencies:
   # firebase_analytics: ^10.1.1
   firebase_auth: ^4.2.6
   firebase_core: ^2.5.0
-  flutter_launcher_icons: ^0.11.0
-  flutter_svg: ^2.0.1
+  firebase_storage: ^11.0.10
+  uuid: ^3.0.7 
   flutter_test:
     sdk: flutter
   image_picker: ^0.8.6+1
-flutter_icons:
-  android: true
-  ios: true
-  image_path: "assets/images/inapp/logotip.png" 
+
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
