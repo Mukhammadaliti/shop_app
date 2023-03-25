@@ -1,22 +1,20 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-// import 'package:shop_app/app/suppliers/galleries/widgets/product_model_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shop_app/app/suppliers/galleries/widgets/products_widget.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
 
-import 'widgets/products_widget.dart';
-
-class MenGallery extends StatefulWidget {
-  const MenGallery({Key? key}) : super(key: key);
+class WomenGallery extends StatefulWidget {
+  const WomenGallery({Key? key}) : super(key: key);
 
   @override
-  _MenGalleryState createState() => _MenGalleryState();
+  _WomenGalleryState createState() => _WomenGalleryState();
 }
 
-class _MenGalleryState extends State<MenGallery> {
+class _WomenGalleryState extends State<WomenGallery> {
   final Stream<QuerySnapshot> _productStream = FirebaseFirestore.instance
       .collection('products')
-      .where('maincategoryValue', isEqualTo: 'men')
+      .where('maincategoryValue', isEqualTo: 'women')
       .snapshots();
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/app/constants/colors/app_colors.dart';
 import 'package:shop_app/app/welcome_page/welcome_widgets/log_sign_widget.dart';
-import 'package:shop_app/app/widgets/animation_widgets/colorize_animation_widget.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -28,7 +27,6 @@ class _WelcomePageState extends State<WelcomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ColorizeAnimationWidget(),
               SizedBox(
                 height: 120,
                 child: Image(
@@ -164,8 +162,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                 ),
                                 Image.asset(
                                   'assets/images/inapp/users.png',
-                                  height: 50,
-                                  // width: 8,
+                                  height: 5,
                                 ),
                               ],
                             ),
@@ -176,45 +173,6 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                 ],
               ),
-              // Container(
-              //   color: AppColors.grey.withOpacity(0.7),
-              //   child: Row(
-              //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-              //     children: [
-              //       // GoogleFacebookGuestWidget(title: 'Google', icon: Icons.google, onTap: (){}),
-              //       GoogleFacebookGuestWidget(
-              //           title: 'Google',
-              //           color: Color(0xff3F5123),
-              //           icon: Icons.laptop_chromebook_sharp,
-              //           onTap: () {}),
-              //       GoogleFacebookGuestWidget(
-              //           title: 'Facebook',
-              //           color: Color(0xff3F5798),
-              //           icon: Icons.facebook,
-              //           onTap: () {}),
-              //       GoogleFacebookGuestWidget(
-              //           title: 'Guest',
-              //           color: Color(0xff3DC5FB),
-              //           icon: Icons.person,
-              //           onTap: () async {
-              //             try {
-              //               final userCredential =
-              //                   await FirebaseAuth.instance.signInAnonymously();
-              //               print("Signed in with temporary account.");
-              //             } on FirebaseAuthException catch (e) {
-              //               switch (e.code) {
-              //                 case "operation-not-allowed":
-              //                   print(
-              //                       "Anonymous auth hasn't been enabled for this project.");
-              //                   break;
-              //                 default:
-              //                   print("Unknown error.");
-              //               }
-              //             }
-              //           }),
-              //     ],
-              //   ),
-              // )
             ],
           ),
         ),

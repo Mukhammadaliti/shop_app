@@ -6,17 +6,17 @@ import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
 
 import 'widgets/products_widget.dart';
 
-class MenGallery extends StatefulWidget {
-  const MenGallery({Key? key}) : super(key: key);
+class ElectronicsGallery extends StatefulWidget {
+  const ElectronicsGallery({Key? key}) : super(key: key);
 
   @override
-  _MenGalleryState createState() => _MenGalleryState();
+  _ElectronicsGallery createState() => _ElectronicsGallery();
 }
 
-class _MenGalleryState extends State<MenGallery> {
+class _ElectronicsGallery extends State<ElectronicsGallery> {
   final Stream<QuerySnapshot> _productStream = FirebaseFirestore.instance
       .collection('products')
-      .where('maincategoryValue', isEqualTo: 'men')
+      .where('maincategoryValue', isEqualTo: 'electronics')
       .snapshots();
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/app/suppliers/galleries/accessories_gallery.dart';
+import 'package:shop_app/app/suppliers/galleries/bags_gallery.dart';
+import 'package:shop_app/app/suppliers/galleries/beauty_gallery.dart';
+import 'package:shop_app/app/suppliers/galleries/home_garden_gallery.dart';
+import 'package:shop_app/app/suppliers/galleries/kids_gallery.dart';
 import 'package:shop_app/app/suppliers/galleries/men_gallery.dart';
+import 'package:shop_app/app/suppliers/galleries/shoes_gallery.dart';
+import 'package:shop_app/app/suppliers/galleries/women_gallery.dart';
 import 'package:shop_app/app/widgets/app_bar/search_widget.dart';
+import 'package:shop_app/app/suppliers/galleries/electronis_gallery.dart';
 import 'package:shop_app/app/widgets/tab_bar_widgets/repeated_tab_bar_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -38,14 +46,14 @@ class _HomePageState extends State<HomePage> {
             )),
         body: TabBarView(children: [
           MenGallery(),
-          Center(child: Text('women screen')),
-          Center(child: Text('Accessories screen')),
-          Center(child: Text('Shoes screen')),
-          Center(child: Text('Bags screen')),
-          Center(child: Text('Kids screen')),
-          Center(child: Text('home & garden screen')),
-          Center(child: Text('Electronics screen')),
-          Center(child: Text('beauty screen')),
+          WomenGallery(),
+          AccessoriesGallery(),
+          ShoesGallery(),
+          BagsGallery(),
+          KidsGallery(),
+          HomeGardenGallery(),
+          ElectronicsGallery(),
+          BeautyGallery(),
         ]),
       ),
     );
