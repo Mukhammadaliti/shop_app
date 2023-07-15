@@ -3,9 +3,18 @@ import 'package:flutter/material.dart';
 
 import '../detail_gallery/detail_gallery_page.dart';
 
-class ProductModelWidget extends StatelessWidget {
-  const ProductModelWidget({super.key, required this.product});
+class ProductModelWidget extends StatefulWidget {
+
+   ProductModelWidget({super.key, required this.product});
   final dynamic product;
+
+  @override
+  State<ProductModelWidget> createState() => _ProductModelWidgetState();
+}
+
+class _ProductModelWidgetState extends State<ProductModelWidget> {
+  bool isChoosen = false;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -14,7 +23,7 @@ class ProductModelWidget extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => ProductDetailPage(
-              productList: product,
+              productList: widget.product,
             ),
           ),
         );
@@ -34,13 +43,13 @@ class ProductModelWidget extends StatelessWidget {
               height: 250,
               width: 200,
               child: Image.network(
-                product['productImages'][0],
+                widget.product['productImages'][0],
                 fit: BoxFit.cover,
               ),
             ),
           ),
           Text(
-            product['productDescription'],
+            widget.product['productDescription'],
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -49,18 +58,36 @@ class ProductModelWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
-                product['price'].toString() + ('\$ '),
+                widget.product['price'].toString() + ('\$ '),
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.favorite_border_outlined,
-                  color: Colors.red,
-                  size: 25,
-                ),
-              ),
+               InkWell(
+                          onTap: () {
+                            isChoosen = !isChoosen;
+                            setState(() {});
+                          },
+                          child: isChoosen == true
+                              ? Icon(
+                                  Icons.favorite,
+                                  color: Colors.red,
+                                  size: 30,
+                                )
+                              : Icon(
+                                  Icons.favorite_border,
+                                  color: Colors.red,
+                                  size: 30,
+                                ))
+              // IconButton(
+              //   onPressed: () {
+                   
+              //   },
+              //   icon: Icon(
+              //     Icons.favorite_border_outlined,
+              //     color: Colors.red,
+              //     size: 25,
+              //   ),
+              // ),
             ],
           )
         ]),

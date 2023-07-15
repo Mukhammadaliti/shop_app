@@ -48,6 +48,7 @@ class AppColors {
   static Color blueGrey = Colors.blueGrey;
   static Color blueGreyShade50 = Colors.blueGrey.shade50;
   static Color blueGreyShade100 = Colors.blueGrey.shade100;
+  
   static Color blueGreyShade200 = Colors.blueGrey.shade200;
   static Color blueGreyShade300 = Colors.blueGrey.shade300;
   static Color blueGreyShade400 = Colors.blueGrey.shade400;

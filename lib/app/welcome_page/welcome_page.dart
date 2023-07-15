@@ -100,7 +100,6 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                 ],
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -142,9 +141,9 @@ class _WelcomePageState extends State<WelcomePage> {
                             color: AppColors.grey.withOpacity(0.7),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(10.0),
+                            padding: const EdgeInsets.all(6.0),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              // mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 LogSignWidget(
                                   title: 'Sign In',
@@ -158,11 +157,11 @@ class _WelcomePageState extends State<WelcomePage> {
                                     Navigator.pushReplacementNamed(
                                         context, '/customer_signup_page');
                                   },
-                                  title: 'Sing Up ',
+                                  title: 'Sign Up ',
                                 ),
                                 Image.asset(
                                   'assets/images/inapp/users.png',
-                                  height: 5,
+                                  height: 50,
                                 ),
                               ],
                             ),

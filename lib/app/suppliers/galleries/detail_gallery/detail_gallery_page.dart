@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:shop_app/app/suppliers/galleries/detail_gallery/full_page.dart';
 import 'package:shop_app/app/suppliers/galleries/widgets/products_widget.dart';
+import 'package:shop_app/app/welcome_page/welcome_page.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
 
@@ -33,9 +34,14 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               elevation: 0,
               backgroundColor: Colors.limeAccent,
               automaticallyImplyLeading: false,
-              leading: Icon(
-                Icons.arrow_back_ios_new,
-                size: 30,
+              leading: IconButton(
+                icon: Icon(
+                  Icons.arrow_back_ios_new,
+                  size: 30,
+                ),
+                onPressed: () {
+               
+                },
               ),
               actions: [
                 Row(
@@ -116,6 +122,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     ],
                   ),
                 ),
+                ProDetailsHeader(label: ' Quantity'),
                 Text(
                   widget.productList['quantity'].toString(),
                   style: TextStyle(
