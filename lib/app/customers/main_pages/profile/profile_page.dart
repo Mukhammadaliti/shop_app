@@ -23,7 +23,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    final mediaSizeWidth = MediaQuery.of(context).size.width;
+    // final mediaSizeWidth = MediaQuery.of(context).size.width;
     final mediaSizeHeight = MediaQuery.of(context).size.height;
     return FutureBuilder<DocumentSnapshot>(
       future: customers
